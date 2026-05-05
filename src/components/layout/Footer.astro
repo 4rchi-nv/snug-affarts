@@ -1,0 +1,226 @@
+---
+const primaryLinks = ["О нас", "Каталог", "Проекты", "Контакты"];
+const secondaryLinks = ["Коллекции", "Бренды", "Страны", "Дизайнеры"];
+---
+
+<footer class="site-footer">
+  <div class="container site-footer__top">
+    <div class="site-footer__brand-col">
+      <a href="/" class="site-footer__brand">S</a>
+      <div class="site-footer__menus">
+        <!-- TODO: connect real footer navigation -->
+        <ul>
+          {primaryLinks.map((item) => <li><a href="#">{item}</a></li>)}
+        </ul>
+        <ul>
+          {secondaryLinks.map((item) => <li><a href="#">{item}</a></li>)}
+        </ul>
+      </div>
+    </div>
+
+    <div class="site-footer__contacts-col">
+      <h3>Подписаться на новости</h3>
+      <!-- TODO: wire up form handling and consent logic -->
+      <form class="site-footer__subscribe" action="#" method="post">
+        <label>
+          <span>Email</span>
+          <input type="email" name="email" placeholder="EMAIL" />
+        </label>
+        <label class="site-footer__consent">
+          <input type="checkbox" name="consent" />
+          <span>Я подтверждаю согласие на обработку персональных данных</span>
+        </label>
+      </form>
+
+      <div class="site-footer__contact-list">
+        <a href="tel:+74952302550">+7 495 230 25 50</a>
+        <a href="mailto:hello@snugsupply.com">hello@snugsupply.com</a>
+        <p>г. Москва, Холодильный переулок, д3к1с3, шоурум 3108</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="container site-footer__projects-row">
+    <p>ПРОЕКТЫ</p>
+    <a href="#" aria-label="Go to projects">→</a>
+  </div>
+
+  <div class="container site-footer__bottom">
+    <p>@ Copyright 2026 Snug</p>
+    <a href="#">Официальное уведомление</a>
+    <a href="#">Политика конфиденциальности</a>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    padding-top: 2.5rem;
+    background: #090909;
+    color: #f2f2f2;
+    border-top: 2px solid #2b57ff;
+  }
+
+  .site-footer a {
+    color: #f2f2f2;
+    text-decoration: none;
+  }
+
+  .site-footer__top {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 2rem;
+    padding-bottom: 2.2rem;
+    border-bottom: 1px solid #2a2a2a;
+  }
+
+  .site-footer__brand-col {
+    display: grid;
+    gap: 1.4rem;
+  }
+
+  .site-footer__brand {
+    width: 64px;
+    height: 64px;
+    border: 2px solid #ef4d2f;
+    border-radius: 12px;
+    color: #ef4d2f;
+    font-size: 2rem;
+    display: grid;
+    place-items: center;
+    font-weight: 700;
+  }
+
+  .site-footer__menus {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+  }
+
+  .site-footer__menus ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 0.7rem;
+  }
+
+  .site-footer__menus a {
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 0.02em;
+  }
+
+  .site-footer__contacts-col h3 {
+    margin: 0 0 1rem;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+  }
+
+  .site-footer__subscribe {
+    display: grid;
+    gap: 0.8rem;
+    margin-bottom: 1.6rem;
+  }
+
+  .site-footer__subscribe label span {
+    display: block;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: #a0a0a0;
+    margin-bottom: 0.35rem;
+  }
+
+  .site-footer__subscribe input[type="email"] {
+    width: 100%;
+    border: 0;
+    border-bottom: 1px solid #4a4a4a;
+    background: transparent;
+    color: #fff;
+    padding: 0.45rem 0.2rem;
+    outline: none;
+  }
+
+  .site-footer__consent {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    font-size: 0.75rem;
+    color: #b7b7b7;
+  }
+
+  .site-footer__contact-list {
+    display: grid;
+    gap: 0.55rem;
+  }
+
+  .site-footer__contact-list a,
+  .site-footer__contact-list p {
+    margin: 0;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 1.05rem;
+    line-height: 1.2;
+  }
+
+  .site-footer__projects-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.2rem 0;
+    border-bottom: 1px solid #2a2a2a;
+  }
+
+  .site-footer__projects-row p {
+    margin: 0;
+    font-size: clamp(2rem, 7vw, 6rem);
+    font-weight: 700;
+    letter-spacing: 0.01em;
+  }
+
+  .site-footer__projects-row a {
+    font-size: clamp(2rem, 5vw, 4.4rem);
+    line-height: 1;
+  }
+
+  .site-footer__bottom {
+    min-height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+    font-size: 0.8rem;
+    color: #a7a7a7;
+  }
+
+  .site-footer__bottom p {
+    margin: 0;
+  }
+
+  .site-footer__bottom a {
+    color: #a7a7a7;
+  }
+
+  @media (max-width: 960px) {
+    .site-footer__top {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 680px) {
+    .site-footer {
+      padding-top: 1.6rem;
+    }
+
+    .site-footer__menus {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+
+    .site-footer__contact-list a,
+    .site-footer__contact-list p {
+      font-size: 0.95rem;
+    }
+  }
+</style>

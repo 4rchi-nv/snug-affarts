@@ -1,0 +1,51 @@
+---
+const items = ["Workspace", "Furniture", "Materials", "Lighting"];
+---
+
+<section class="section">
+  <div class="container">
+    <h2 class="section__title">Превью продуктов / сервисов</h2>
+    <p class="section__description">
+      <!-- TODO: map these cards to real categories from CMS/API -->
+      Grid skeleton to represent major solution categories.
+    </p>
+
+    <div class="grid products">
+      {items.map((item) => (
+        <article class="placeholder-card">
+          <h3>{item}</h3>
+          <p>Temporary card description for structure only.</p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .products {
+    margin-top: 1.5rem;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .products h3 {
+    margin: 0 0 0.5rem;
+  }
+
+  .products p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.95rem;
+  }
+
+  @media (max-width: 1024px) {
+    .products {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 640px) {
+    .products {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

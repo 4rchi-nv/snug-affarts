@@ -1,0 +1,39 @@
+---
+const features = [
+  "Комплексный подход",
+  "Собственное производство",
+  "Управление поставками",
+  "Реализация под ключ"
+];
+---
+
+<section class="section">
+  <div class="container">
+    <h2 class="section__title">Преимущества</h2>
+    <p class="section__description">
+      <!-- TODO: replace with approved USP list and visual style -->
+      Placeholder advantages list for homepage architecture phase.
+    </p>
+
+    <ul class="grid features">
+      {features.map((feature) => (
+        <li class="placeholder-card">{feature}</li>
+      ))}
+    </ul>
+  </div>
+</section>
+
+<style>
+  .features {
+    margin: 1.5rem 0 0;
+    padding: 0;
+    list-style: none;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  @media (max-width: 640px) {
+    .features {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
